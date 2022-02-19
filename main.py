@@ -1,5 +1,6 @@
 from node import node
 from random import randint
+import matplotlib.pyplot as plt
 
 # ex1 part1
 nodes = []
@@ -20,3 +21,22 @@ for i in range((len(nodes))):
             nodes[i].neighbor_nodes.append(temp_nodes[id])
             j += 1
 
+# ex1 part3
+x = []
+y = []
+
+for node in nodes:
+    for neighbor in node.neighbor_nodes:
+        x.append(node.X)
+        y.append(node.Y)
+
+        x.append(neighbor.X)
+        y.append(neighbor.Y)
+ 
+plt.plot(x, y, color='blue', markerfacecolor='red', marker='o', linewidth = 0.4)
+plt.xlabel('x')
+plt.ylabel('y')
+plt.ylim(0,100)
+plt.xlim(0,100)
+plt.title('Graph of nodes')
+plt.show()
