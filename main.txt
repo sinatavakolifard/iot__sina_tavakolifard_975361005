@@ -19,7 +19,7 @@ for i in range((len(nodes))):
             j += 1
 
 for node in nodes:
-    print("node id:", str(node.id) +", X:", str(node.X) + ", Y:", node.Y,"- neighbour nodes: ", node.neighbor_nodes[0].id, node.neighbor_nodes[1].id, node.neighbor_nodes[2].id, node.neighbor_nodes[3].id, node.neighbor_nodes[4].id, node.neighbor_nodes[5].id)
+    print("node id:", str(node.id) +", X:", str(node.X) + ", Y:", node.X,"- neighbour nodes: ", node.neighbor_nodes[0].id, node.neighbor_nodes[1].id, node.neighbor_nodes[2].id, node.neighbor_nodes[3].id, node.neighbor_nodes[4].id, node.neighbor_nodes[5].id)
 
 def show_graph_of_nodes(nodes):
         G = nx.DiGraph()
