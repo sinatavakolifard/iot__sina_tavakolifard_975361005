@@ -114,6 +114,9 @@ def see_paths(paths, nodes):
         G = nx.DiGraph()
         pos = {}
         for node in nodes:
+            G.add_node(node.id)
+        
+        for node in nodes:
             pos[node.id] = (node.X, node.Y)
         
         edges = []

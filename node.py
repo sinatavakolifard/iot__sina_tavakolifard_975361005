@@ -1,15 +1,14 @@
 class node:
-    def __init__(self, id, X, Y) -> None:
+    def __init__(self, id, X, Y, neighbor=[]) -> None:
         self.id = id
         self.X = X
         self.Y = Y
-        self.neighbor_nodes = []
-        
-        self.R = 0
-        self.G = 0
-        self.B = 0
-    
-    def set_rgb(self, r, g, b):
-        self.R = r
-        self.G = g
-        self.B = b
+
+        # neighbours format: [{"name":Node, "distance":Number}, {"name":Node, "distance":Number}, ...]
+        self.neighbor_nodes = neighbor[:]
+
+        # routing_table format: {destinationId:(distance, nextHop), destinationId:(distance, nextHop), ...}
+        self.routing_table = {}
+
+        # neighbor_tables format: {id:routing_table, id:routing_table, ...}
+        self.neighbor_tables = {}
